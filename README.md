@@ -7,7 +7,7 @@ Scripts to create CA, server config and client config in .ovpn format.
 5) Create a folder $HOME/openVPN/servers
 5) Create a folder $HOME/openVPN/clients
 6) Copy server.conf.example in $HOME/openVPN/servers
-7) Copy client.conf.example in $HOME/openVPN/clients
+7) Copy client.conf in $HOME/openVPN/clients
 8) Copy vars.example in $HOME/EasyRSA to $HOME/openVPN/ca/<your first server>
 9) Change files according to your requirements
 10) Create the first OpenVPN server

@@ -2,7 +2,7 @@
 Scripts to create CA, server config and client config in .ovpn format.
 1) Create a folder openVPN in your $HOME
 2) Install EasyRSA in $HOME/openVPN
-3) Create a symbolic link in $HOME/openVPN ln -s EasyRSA<version> EasyRSA
+3) Create a symbolic link in $HOME/openVPN ln -s $HOME/openVPN/EasyRSA..version.. $HOME/openVPN/EasyRSA
 4) Create a folder $HOME/openVPN/ca
 5) Create a folder $HOME/openVPN/servers
 5) Create a folder $HOME/openVPN/clients

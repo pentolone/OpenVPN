@@ -2,7 +2,7 @@
 #
 #	crea-servverkey.bash
 #	Create CA certificate and server certificate
-#	(C) Luca Romano 2021
+#	(C) Connexx srl 2021
 #
 #
 #
@@ -26,7 +26,7 @@ function confirm() {
 	CNX_YN=""
 	while [ "$CNX_YN" != "y" ]  && [ "$CNX_YN" != "Y" ] && [ "$CNX_YN" != "n" ] && [ "$CNX_YN" != "N" ]
 	do
-		echo "$1 (Y/N) ?"
+		echo -e "$1 (Y/N) ?"
 		read CNX_YN
 	done
 }
@@ -47,7 +47,7 @@ function select_cn() {
 
 function select_server_name() {
 	CNX_SERVERNAME="server"
-	echo "Please enter the name used to generate file or hit enter to accept default of '$CNX_SERVERNAME'; q to quit"
+	echo "Please enter the name used to generate file [$CNX_SERVERNAME]; q to quit"
 	read CNX_SERVERNAME
 	if [ "$CNX_SERVERNAME" == "" ]
 	then
@@ -57,7 +57,7 @@ function select_server_name() {
 
 function select_server_net() {
 	CNX_SERVERNET=""
-	echo "Please enter the network used by this server or hot return to accept default of '10.8.0.0'; q to quit"
+	echo "Please enter the network used by this server [10.8.0.0]; q to quit"
 	read CNX_SERVERNET
 	if [ "$CNX_SERVERNET" == "" ]
 	then
@@ -67,7 +67,7 @@ function select_server_net() {
 
 function select_server_subnet() {
 	CNX_SERVERSUBNET=""
-	echo "Please enter the subnet used by this server or hit return to accept default of '255.255.255.0'; q to quit"
+	echo "Please enter the subnet used by this server [255.255.255.0]; q to quit"
 	read CNX_SERVERSUBNET
 	if [ "$CNX_SERVERSUBNET" == "" ]
 	then
@@ -141,7 +141,7 @@ do
 		quit "exiting upon user request..."
 	fi
 
-	confirm "Generating CA and CERTIFICATE for SERVER called -> $CNX_SERVERNAME with Common Name (CN) -> $CNX_CN\nVPN network -> $CNX_SERVERNET, subnet $CNX_SERVERSUBNET"
+	confirm "Generating CA and CERTIFICATE, summary\nSERVER -> $CNX_SERVERNAME\nCommon Name (CN) -> $CNX_CN\nVPN network -> $CNX_SERVERNET\nsubnet -> $CNX_SERVERSUBNET"
 	if [ "$CNX_YN" == "n" ] || [ "$CNX_YN" == "N" ]
 	then
 		continue
